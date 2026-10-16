@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EQ for YouTube Music</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="logo">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <rect x="2" y="10" width="3" height="12" rx="1.5" fill="url(#g1)" />
+            <rect x="7" y="6" width="3" height="16" rx="1.5" fill="url(#g1)" />
+            <rect x="12" y="2" width="3" height="20" rx="1.5" fill="url(#g1)" />
+            <rect x="17" y="7" width="3" height="15" rx="1.5" fill="url(#g1)" />
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#a855f7" />
+                <stop offset="100%" stop-color="#06b6d4" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="logo-text">EQ <span class="logo-accent">Music</span></span>
+        </div>
+
+        <div class="header-controls">
+          <div class="toggle-wrap">
+            <span class="toggle-label" id="toggle-status">ON</span>
+            <label class="toggle" for="eq-toggle">
+              <input type="checkbox" id="eq-toggle" checked />
+              <span class="slider"></span>
+            </label>
+          </div>
+        </div>
+      </header>
+
+      <div class="presets-section">
+        <span class="section-label">Presets</span>
+        <div class="presets-list" id="presets-list"></div>
+      </div>
+
+      <div class="preamp-section">
+        <span class="preamp-label">Preamp</span>
+        <div class="preamp-slider-wrap">
+          <input type="range" id="preamp" class="preamp-range" min="-12" max="12" step="0.5" value="0" />
+          <span class="preamp-value" id="preamp-value">0 dB</span>
+        </div>
+      </div>
+
+      <div class="eq-section">
+        <div class="eq-grid" id="eq-grid"></div>
+        <div class="freq-labels" id="freq-labels"></div>
+      </div>
+
+      <div class="curve-container">
+        <canvas id="eq-curve" width="380" height="80"></canvas>
+      </div>
+
+      <footer class="footer">
+        <button class="btn-reset" id="btn-reset">Reset All</button>
+        <span class="footer-hint">Drag sliders to shape your sound</span>
+      </footer>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
